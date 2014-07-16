@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2-side pll recognition trainer</title>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="rubikjs/RubikjsCore.js"></script>
+        <script type="text/javascript" src="rubikjs/RubikjsRender.js"></script>
+        <script type="text/javascript" src="rubikjs/RubikjsRenderWebGL.js"></script>
+        <script type="text/javascript" src="rubikjs/RubikjsRenderCanvas.js"></script>
+        <script type="text/javascript" src="rubikjs/RubikjsNotation.js"></script>
+        <script type="text/javascript" src="rubikjs/RubikjsTwisty.js"></script>
+        <script type="text/javascript" src="rubikjs/ClassicRubiksCube.js"></script>
+        <script type="text/javascript" src="pllTrainer.js"></script>
+    </head>
+    <body>
+        <div>
+            <canvas id="cube" width="500" height="500"></canvas>
+        </div>
+        <h1 id="solution">&nbsp;&nbsp;</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <form>
+            <fieldset style="display: inline-block">
+                <legend>Options</legend>
+                <input type="radio" name="renderer" onchange="changeRenderer('WebGL')" id="webgl" checked /> <label for="webgl">WebGL</label> <input type="radio" name="renderer" onchange="changeRenderer('Canvas')" id="canvas" /> <label for="canvas">Canvas</label> <br />
+                <input type="checkbox" id="cn" onchange="updateCN()" checked /> <label for="cn">Color Neutral</label> <br />
+                <label for="setup">Setup moves:</label> <input type="text" id="setup" value="z" onchange="updateCN()" disabled />
+            </fieldset>
+        </form>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>
+            Instructions:
+            <ul>
+                <li>Step 1: Press space</li>
+                <li>Step 2: Find which PLL has been shown</li>
+                <li>Step 3: Press space again</li>
+                <li>Step 4: The solution is given, check if you're correct</li>
+                <li>Step 5: Go to step 1</li>
+            </ul>
+            You can also use left and right arrow keys to do Y and Y' rotations<br />
+            If you're not color neutral, you can uncheck the "Color Neutral" checkbox, and change the "setup moves" input to the rotations you need to do to have your cross face down.
+        </p>
+    </body>
+</html>
+
